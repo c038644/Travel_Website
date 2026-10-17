@@ -57,28 +57,29 @@ async function loadTranslations(lang) {
   }
 
   // Change the active language
-  async function setLanguage(lang) {
-    try {
-      const translations = await loadTranslations(lang);
+async function setLanguage(lang) {
+  try {
+    const translations = await loadTranslations(lang);
 
-      applyTranslations(translations);
+    applyTranslations(translations);
 
-      document.documentElement.setAttribute("lang", lang);
+    document.documentElement.setAttribute("lang", lang);
 
-      localStorage.setItem(STORAGE_KEY, lang);
+    if (langSelect) {
+      langSelect.value = lang;
+    }
 
-      if (langSelect) {
-        langSelect.value = lang;
-      }
-    } catch (err) {
-      console.error(err);
+    localStorage.setItem(STORAGE_KEY, lang);
+  } catch (err) {
+    console.error(`Failed to switch to "${lang}":`, err);
 
-      // Fall back to English if another language fails
-      if (lang !== DEFAULT_LANG) {
-        await setLanguage(DEFAULT_LANG);
-      }
+    // Restore the currently applied language in the selector.
+    if (langSelect) {
+      langSelect.value =
+        document.documentElement.getAttribute("lang") || DEFAULT_LANG;
     }
   }
+}
 
   // Language selector
   if (langSelect) {
