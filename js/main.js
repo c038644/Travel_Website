@@ -14,17 +14,20 @@
   const formNote = document.getElementById("formNote");
 
   // Load translations for the selected language
-  async function loadTranslations(lang) {
-    const response = await fetch(`i18n/${lang}.json`);
 
-    if (!response.ok) {
-      throw new Error(
-        `Could not load translations for "${lang}".`
-      );
-    }
+async function loadTranslations(lang) {
+  const url = new URL(`./i18n/${lang}.json`, document.baseURI);
+  const response = await fetch(url);
 
-    return response.json();
+  if (!response.ok) {
+    throw new Error(
+      `Could not load translations: ${response.status} ${url.href}`
+    );
   }
+
+  return response.json();
+}
+
 
   // Apply translations to the page
   function applyTranslations(translations) {
