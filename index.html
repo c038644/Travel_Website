@@ -3,67 +3,241 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="descripton" content="Tourism">
-  <link rel="stylesheet" href="css/style.css" />
+  <meta name="description" content="Tourism">
+  <title>Meridian Travel &amp; Asset Advisory</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-  
-  
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f9;
-      color: #333;
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
 
-    main {
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-      max-width: 500px;
-      margin: 1rem;
-    }
-
-    h1 {
-      color: #4f46e5;
-    }
-
-    button {
-      background: #4f46e5;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-
-    button:hover {
-      background: #3730a3;
-    }
-  </style>
-</head>
 <body>
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a class="logo" href="#home">
+        <span class="logo-mark">M</span>
+        <span class="logo-text">
+          Meridian<span class="logo-accent">Travel</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="siteNav">
+        <a href="#home" data-i18n="nav_home">Home</a>
+        <a href="#about" data-i18n="nav_about">About</a>
+        <a href="#services" data-i18n="nav_services">Services</a>
+        <a href="#locations" data-i18n="nav_locations">Locations</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <label for="langSelect" class="visually-hidden">
+          Language
+        </label>
+
+        <select id="langSelect" class="lang-select"
+                aria-label="Select language">
+          <option value="en">EN - English</option>
+          <option value="fr">FR - Français</option>
+          <option value="kk">КК - Қазақша</option>
+        </select>
+
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
   <main>
-    <h1>Hello, world!</h1>
-    <p>Welcome to my first webpage.</p>
-    <button id="helloButton">Click me</button>
-    <p id="message"></p>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <h1 data-i18n="hero_title">
+          Your Journey. Your Investment. Expertly Guided.
+        </h1>
+
+        <p class="hero-subtitle" data-i18n="hero_subtitle">
+          Bespoke tourism, travel planning and asset purchase advisory,
+          connecting clients across England, France and Kazakhstan.
+        </p>
+
+        <a class="btn btn-primary" href="#contact"
+           data-i18n="hero_cta">
+          Start a Conversation
+        </a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 data-i18n="about_title">About Us</h2>
+
+        <p data-i18n="about_text">
+          We are a boutique advisory firm helping individuals and families
+          plan unforgettable travel experiences and make confident asset
+          purchases abroad. With teams in England, France and Kazakhstan,
+          we combine local expertise with an international outlook,
+          guiding you from first enquiry to final decision.
+        </p>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section section-alt">
+      <div class="container">
+        <h2 data-i18n="services_title">Our Services</h2>
+
+        <div class="card-grid">
+
+          <article class="card">
+            <h3 data-i18n="service_tourism_title">
+              Tourism Experiences
+            </h3>
+
+            <p data-i18n="service_tourism_text">
+              Curated itineraries, cultural excursions and private tours
+              tailored to your interests, pace and budget.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3 data-i18n="service_travel_title">
+              Travel Planning &amp; Logistics
+            </h3>
+
+            <p data-i18n="service_travel_text">
+              End-to-end trip coordination, including flights,
+              accommodation, transfers and on-the-ground support,
+              wherever you go.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3 data-i18n="service_assets_title">
+              Asset Purchase Advisory
+            </h3>
+
+            <p data-i18n="service_assets_text">
+              Independent guidance on property and asset acquisitions
+              abroad, including due diligence and local liaison.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section id="locations" class="section">
+      <div class="container">
+        <h2 data-i18n="locations_title">Where We Operate</h2>
+
+        <div class="card-grid">
+
+          <article class="card">
+            <h3 data-i18n="location_england_title">England</h3>
+
+            <p data-i18n="location_england_text">
+              Our home base, supporting clients across the UK with
+              local knowledge and international reach.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3 data-i18n="location_france_title">France</h3>
+
+            <p data-i18n="location_france_text">
+              A dedicated team assisting with travel and asset
+              opportunities throughout mainland France.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3 data-i18n="location_kazakhstan_title">
+              Kazakhstan
+            </h3>
+
+            <p data-i18n="location_kazakhstan_text">
+              Growing local partnerships connecting clients to
+              opportunities across Central Asia.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section-alt">
+      <div class="container contact-inner">
+
+        <div class="contact-intro">
+          <h2 data-i18n="contact_title">Get in Touch</h2>
+
+          <p data-i18n="contact_text">
+            Tell us about your trip or purchase and a member of our
+            team will be in touch shortly.
+          </p>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <label for="name" data-i18n="form_name">
+            Full Name
+          </label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email" data-i18n="form_email">
+            Email Address
+          </label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="message" data-i18n="form_message">
+            Message
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            required
+          ></textarea>
+
+          <button type="submit" class="btn btn-primary"
+                  data-i18n="form_submit">
+            Send Message
+          </button>
+
+          <p class="form-note" id="formNote" hidden
+             data-i18n="form_note">
+            Thank you. This is a demo form and is not yet connected
+            to email.
+          </p>
+        </form>
+
+      </div>
+    </section>
+
   </main>
 
-  <script>
-    const button = document.getElementById("helloButton");
-    const message = document.getElementById("message");
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        <span data-i18n="footer_rights">
+          &copy; 2026 Meridian Travel &amp; Asset Advisory.
+          All rights reserved.
+        </span>
+      </p>
+    </div>
+  </footer>
 
-    button.addEventListener("click", () => {
-      message.textContent = "Hey! Your JavaScript is working 🎉";
-    });
-  </script>
+  <script src="js/main.js"></script>
 </body>
 </html>
